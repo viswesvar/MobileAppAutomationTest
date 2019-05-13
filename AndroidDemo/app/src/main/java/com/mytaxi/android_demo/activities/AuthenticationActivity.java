@@ -75,6 +75,8 @@ public class AuthenticationActivity extends AppCompatActivity {
                     mSharedPrefStorage.saveUser(mUser);
                     finish();
                     Log.i(LOG_TAG, "Successful login with user: " + username);
+                    Intent intent = new Intent(AuthenticationActivity.this, MainActivity.class);
+                    startActivity(intent);
                 } else {
                     View view = findViewById(android.R.id.content);
                     Snackbar.make(view, R.string.message_login_fail, Snackbar.LENGTH_LONG).show();
